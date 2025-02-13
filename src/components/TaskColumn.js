@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import TaskCard from "./TaskCard";
 
 function TaskColumn({ title, tasks, updateTaskStatus, deleteTask, editTask, status }) {
   return (
     <div className="task-column">
-      <h2>{title}</h2>
+      <div className="task-column-title">
+        <span className="task-column-title-text border rounded-2 m-0 p-1">{title}</span>
+      </div>
       {tasks.map((task) => (
         <TaskCard
           key={task.id}
@@ -21,7 +22,6 @@ function TaskColumn({ title, tasks, updateTaskStatus, deleteTask, editTask, stat
   );
 }
 
-// PropTypes validation
 TaskColumn.propTypes = {
   title: PropTypes.string.isRequired,
   tasks: PropTypes.arrayOf(

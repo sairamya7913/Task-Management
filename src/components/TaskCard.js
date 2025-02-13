@@ -2,22 +2,39 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 
 function TaskCard({ task, updateTaskStatus, deleteTask, editTask, status }) {
+  /* 
+  * Initialize state variables for editing the task.
+  * isEditing: Tracks whether the task is in editing mode.
+  * newText: Stores the new text value for the task.
+  * selectedCategory: Stores the selected category for the task.
+  * newTags: Stores the new tags, joining them as a comma-separated string.
+  * newDueDate: Stores the new due date for the task.
+  */
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(task.text);
   const [selectedCategory, setSelectedCategory] = useState(task.category);
   const [newTags, setNewTags] = useState(task.tags ? task.tags.join(", ") : "");
   const [newDueDate, setNewDueDate] = useState(task.dueDate);
 
+  /* 
+   * Handle the task editing logic.
+   * When editing is complete, the task is updated with the new values.
+   */
   const handleEdit = () => {
     // Ensure newTags is split back into an array when editing
     editTask(task.id, newText, selectedCategory, newTags.split(","), newDueDate);
     setIsEditing(false);
   };
 
+  /* 
+   * Handle the task status change.
+   * The new status is set based on the user’s selection.
+   */
   const handleStatusChange = (e) => {
     const newStatus = e.target.value;
     updateTaskStatus(task.id, newStatus);
   };
+
 
   return (
     <div className="task-card">
@@ -71,7 +88,7 @@ function TaskCard({ task, updateTaskStatus, deleteTask, editTask, status }) {
   );
 }
 
-// PropTypes validation
+// propType Validation
 TaskCard.propTypes = {
   task: PropTypes.shape({
     id: PropTypes.number.isRequired,

@@ -2,21 +2,35 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 
 function TaskForm({ addTask }) {
+  /* 
+   * Initialize state variables for the task form.
+   * taskText: Stores the text of the task being created.
+   * category: Stores the selected category for the task (default is 'work').
+   * tags: Stores the tags entered for the task, as a comma-separated string.
+   * dueDate: Stores the due date for the task.
+   */
   const [taskText, setTaskText] = useState("");
   const [category, setCategory] = useState("work");
   const [tags, setTags] = useState("");
   const [dueDate, setDueDate] = useState("");
 
+  /* 
+   * Handle the form submission when creating a new task.
+   * Prevents the default form submission behavior and checks if taskText is not empty.
+   * If the task text is valid, it calls addTask and resets the form fields.
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     if (taskText.trim()) {
       addTask(taskText, category, tags.split(","), dueDate);
+      // Reset form fields after submitting the task
       setTaskText("");
       setCategory("work");
       setTags("");
       setDueDate("");
     }
   };
+
 
   return (
     <div className="task-form-container">
@@ -52,7 +66,7 @@ function TaskForm({ addTask }) {
   );
 }
 
-// PropTypes validation
+// propType Validation
 TaskForm.propTypes = {
   addTask: PropTypes.func.isRequired,
 };
