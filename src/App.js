@@ -115,7 +115,7 @@ function App() {
   };
 
   return (
-    <div className="App p-3">
+    <div className="App p-3 text-center">
       <h3 className="d-flex justify-content-start mb-5 mt-3"><i className="bi bi-columns-gap me-2"></i>Task Buddy</h3>
       {/* Button to toggle visibility of task columns */}
       <div className="d-flex justify-content-start">
@@ -150,7 +150,7 @@ function App() {
 
       {/* Conditionally render the columns */}
       {showColumns && (
-        <div className="columns">
+        <div className="columns d-flex">
           <TaskColumn
             title="To Do"
             tasks={tasks.filter((task) => task.status === "todo")}
@@ -196,7 +196,7 @@ function App() {
 
           {/* Show tasks only if the current status is expanded */}
           {activeAccordion === status && (
-            <div className="task-list d-flex">
+            <div className="task-list d-flex" style={{marginTop:"10px",paddingLeft:"20px"}}>
               {tasks.filter((task) => task.status === status).length > 0 ? (
                 tasks.filter((task) => task.status === status).map((task) => (
                   <TaskColumn
@@ -210,7 +210,7 @@ function App() {
                   />
                 ))
               ) : (
-                <p>No tasks</p>
+                <p style={{fontStyle:"italic"}}>No tasks</p>
               )}
             </div>
           )}

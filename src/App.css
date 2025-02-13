@@ -1,27 +1,7 @@
-.App {
-  text-align: center;
-}
-
 .columns {
-  display: flex;
   justify-content: space-between;
   gap: 20px;
   margin-top: 20px;
-}
-
-.task-column {
-  width: 30%;
-  padding: 10px;
-  background-color: #f4f4f4;
-  border-radius: 5px;
-}
-
-.task-card {
-  background-color: #fff;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 button {
@@ -44,9 +24,6 @@ input {
   margin-bottom: 10px;
 }
 
-.task-form {
-  margin-top: 20px;
-}
 /* Modal Overlay */
 .modal-overlay {
   position: fixed;
@@ -160,15 +137,7 @@ input {
 .task-submit:focus {
   outline: none;
 }
-.rows {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
 
-.mt-5 {
-  margin-top: 20px;
-}
 /* Title container styling */
 .task-column-title {
   text-transform: uppercase;
@@ -181,6 +150,7 @@ input {
   background-color: #ab7dca;
   color: white;
 }
+
 /* Add some basic accordion styles */
 .accordion-section {
   margin-bottom: 1rem;
@@ -194,13 +164,3 @@ input {
   cursor: pointer;
   margin: 0;
 }
-
-.task-list {
-  margin-top: 10px;
-  padding-left: 20px;
-}
-
-.task-list p {
-  font-style: italic;
-}
-

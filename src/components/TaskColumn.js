@@ -4,7 +4,12 @@ import TaskCard from "./TaskCard";
 
 function TaskColumn({ title, tasks, updateTaskStatus, deleteTask, editTask, status }) {
   return (
-    <div className="task-column">
+    <div className="task-column" style={{
+      width: '30%',
+      padding: '10px',
+      backgroundColor: '#f4f4f4',
+      borderRadius: '5px'
+    }}>
       <div className="task-column-title">
         <span className="task-column-title-text border rounded-2 m-0 p-1">{title}</span>
       </div>

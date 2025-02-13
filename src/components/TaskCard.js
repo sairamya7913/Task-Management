@@ -37,7 +37,13 @@ function TaskCard({ task, updateTaskStatus, deleteTask, editTask, status }) {
 
 
   return (
-    <div className="task-card">
+    <div className="task-card" style={{
+      backgroundColor: '#fff',
+      margin: '10px 0',
+      padding: '10px',
+      borderRadius: '5px',
+      boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)'
+    }}>
       {isEditing ? (
         <div>
           <input type="text" value={newText} onChange={(e) => setNewText(e.target.value)} />
